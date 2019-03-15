@@ -29,12 +29,9 @@ class Utility {
             line1 = String(str[0...centerIndex])
             line2 = String(str[centerIndex+1...str.count-1])
             if str[centerIndex] != " " {
-                if let temCenter =  line1.lastIndex(of: " ") {  //  line2.firstIndex(of: " "){
+                if let temCenter =  line1.lastIndex(of: " ") {
                     line1 = String(str[0...temCenter.encodedOffset])
                     line2 = String(str[temCenter.encodedOffset...str.count - 1])
-//                    let line1Length = centerIndex + temCenter.encodedOffset
-//                    line1 = String(str[0...line1Length])
-//                    line2 = String(str[line1Length+1...str.count-1])
                 }else{
                     line1 = str
                     line2 = ""

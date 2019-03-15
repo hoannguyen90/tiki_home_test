@@ -21,7 +21,6 @@ class HttpServices {
         case POST = 1
         case GET = 2
         case DELETE = 3
-        case POST_DATA = 4
     }
     
     class func httpRequest(method:Method,path:String, params: Any?,imgData:Data? = nil, respone:((_ responseData:ResponseObject)->())?) {
@@ -30,7 +29,7 @@ class HttpServices {
             shareSessionManager?.get(path, parameters: params, progress: nil, success: { (operation, responseData) in
                 successProcess(responseObject: responseData, respone: respone)
             }) { (operation, error) in
-                 failureProcess(error: error, respone: respone)
+                failureProcess(error: error, respone: respone)
             }
         }else if method == .POST{
             shareSessionManager?.post(path, parameters: params, progress: nil, success: { (operation, responseData) in

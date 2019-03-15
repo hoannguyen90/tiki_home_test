@@ -12,7 +12,6 @@ class HotProductController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var collectionview: UICollectionView!
     
-    let colors = ["#16702e", "#005a51", "#996c00", "#5c0a6b", "#006d90", "#974e06", "#99272e", "#89221f", "#00345d"]
     var products = [Product]()
     
     override func viewDidLoad() {
@@ -59,7 +58,7 @@ class HotProductController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let product = products[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCardCell", for: indexPath) as! ProductCardCell
-        cell.setData(productName: product.name, icon: product.icon, color: self.colors[indexPath.item % colors.count])
+        cell.setData(productName: product.name, icon: product.icon, color: colorsBox[indexPath.item % colorsBox.count])
         return cell
     }
     

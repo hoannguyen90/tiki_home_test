@@ -7,7 +7,10 @@
 //
 
 import Foundation
+
+let colorsBox = ["#16702e", "#005a51", "#996c00", "#5c0a6b", "#006d90", "#974e06", "#99272e", "#89221f", "#00345d"]
 class ProductServices {
+    
     
     class func fetchProducts(finish: ((_ producs:[Product]?,_ message:String?)-> Void)?) {
         HttpServices.httpRequest(method: .GET, path: API_HOT_PRODUCTS, params: nil) { (responeObj) in
